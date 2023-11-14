@@ -1,0 +1,1138 @@
+{
+	"info": {
+		"_postman_id": "5358a5a3-e889-4c67-81a9-c13cad010703",
+		"name": "classeapi",
+		"description": "Cette api a été réalisé pendant le cours de PWA de deuxième année de la formation de technicien ES. Les personnes constituant le groupe de travail sont Nathan Grng et Sacha Kssln.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19385201"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						},
+						"description": "Cet appel à l'API permet de récupérer tous les utilisateurs enregistrés dans la basse de donnée"
+					},
+					"response": [
+						{
+							"name": "Get all users",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "294"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"126-GZ7TgVn3AeU59w9q+lAnR3FJkv8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:02:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"user_id\": 2,\n        \"user_name\": \"Nathan Grng\",\n        \"user_is_teacher\": 1\n    },\n    {\n        \"user_id\": 3,\n        \"user_name\": \"Amir Yns\",\n        \"user_is_teacher\": 1\n    },\n    {\n        \"user_id\": 4,\n        \"user_name\": \"Karel Svbd\",\n        \"user_is_teacher\": 0\n    },\n    {\n        \"user_id\": 5,\n        \"user_name\": \"Sacha Kssln\",\n        \"user_is_teacher\": 0\n    },\n    {\n        \"user_id\": 7,\n        \"user_name\": \"John Doe\",\n        \"user_is_teacher\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get users by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/user/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"7"
+							]
+						},
+						"description": "Dans cet appel, nous pouvons récupérer les informations d'un utilisateur en particulier à l'aide de son numéro d'identification"
+					},
+					"response": [
+						{
+							"name": "Get users by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/user/7",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-bmfgVZ72H4q12EWIejjirqXpR+w\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:02:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"user_id\": 7,\n        \"user_name\": \"John Doe\",\n        \"user_is_teacher\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "Username",
+									"value": "John Doe",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "Super1234",
+									"type": "text"
+								},
+								{
+									"key": "IsUserTeacher",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user"
+							]
+						},
+						"description": "Cet appel sert à ajouter un utilisateur à la base de données en effectuant une requête de type POST.\n\nLes informations à ajouter sont :\n\n- \"Username\" qui est le nom d'utilisateur à ajouter dans la base,\n    \n- \"Password\" qui correspond au mot de passe qui sera crypté et ajouter en base puis pour finir\n    \n- \"IsUserTeacher\" qui est un  \n    drapeau qui donne l'information si l'utilisateur est un professeur ou non."
+					},
+					"response": [
+						{
+							"name": "inscription",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "Username",
+											"value": "John Doe",
+											"type": "text"
+										},
+										{
+											"key": "Password",
+											"value": "Super1234",
+											"type": "text"
+										},
+										{
+											"key": "IsUserTeacher",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/user",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-q+kMqYLVwbsv7Fhu4X+6uN4n9ck\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:01:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 1,\n    \"insertId\": 7,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "supression d'eleve",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:8080/user/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"6"
+							]
+						},
+						"description": "Cet appel permet de supprimer un utilisateur de la base de données"
+					},
+					"response": [
+						{
+							"name": "supression d'eleve",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:8080/user/6",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"6"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-r8bKvcfQJxHfmO4yrVRF/uUE37I\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:00:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Dans cette catégorie, nous allons pouvoir retrouver toutes les actions réalisables pour interagir avec la partie utilisateur de la base de données"
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "get all course",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:8080/course/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								""
+							]
+						},
+						"description": "Cet appel à l'API permet de récupérer tous les cours enregistrés dans la basse de donnée"
+					},
+					"response": [
+						{
+							"name": "get all course",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "localhost:8080/course/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"course",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "458"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ca-Pb1cPCzBuKQTYSBZitOIwyPYGcY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:02:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"course_id\": 1,\n        \"course_title\": \"Poo\",\n        \"course_imgLink\": null,\n        \"course_appearanceDate\": \"2023-10-09T22:00:00.000Z\",\n        \"couse_updateDate\": null,\n        \"user_idTeacher\": 2\n    },\n    {\n        \"course_id\": 2,\n        \"course_title\": \"C#\",\n        \"course_imgLink\": null,\n        \"course_appearanceDate\": \"2023-10-30T23:00:00.000Z\",\n        \"couse_updateDate\": null,\n        \"user_idTeacher\": 2\n    },\n    {\n        \"course_id\": 3,\n        \"course_title\": \"RH\",\n        \"course_imgLink\": null,\n        \"course_appearanceDate\": \"2023-11-06T23:00:00.000Z\",\n        \"couse_updateDate\": null,\n        \"user_idTeacher\": 2\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "add course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idUser",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Droit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/course/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								""
+							]
+						},
+						"description": "Cet appel permet d'ajouter un cours à la base de données. Les champs à remplir sont :\n\n- idUser -> identité de l'utilisateur qui crée le cours (prof donnant le cours)\n- title -> nom du cours"
+					},
+					"response": [
+						{
+							"name": "add course",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "idUser",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Droit",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/course/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"course",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-sn5L/s6NdcVRmLaA8CB30hv6l0Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:03:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 1,\n    \"insertId\": 4,\n    \"serverStatus\": 3,\n    \"warningCount\": 0,\n    \"message\": \"\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "add note",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idUser",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "6",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/course/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"3"
+							]
+						},
+						"description": "Cet appel permet à un utilisateur de noter un cours auquel il participe et également de mettre à jour la note qu'il veut lui donner. Les champs à remplir sont à deux endroits differents :\n\nDans l'URL:\n\n- Ajouter l'id du cours que l'utilisateur veut noter\n    \n\nDans le POST :\n\n- idUser -> Identité de l'utilisateur\n- note -> valeur de la note que l'utilisateur veut mettre au cours"
+					},
+					"response": [
+						{
+							"name": "add note",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "idUser",
+											"value": "7",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "6",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/course/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"course",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-r8bKvcfQJxHfmO4yrVRF/uUE37I\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:03:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 1,\n    \"insertId\": 0,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "add category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "idCategory",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/course/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "categoryid",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/course/:courseId",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								":courseId"
+							],
+							"variable": [
+								{
+									"key": "courseId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove course",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "asdasd",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "ad",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/course/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"course",
+								"4"
+							]
+						},
+						"description": "Cette requête permet de supprimer un cours de la base de données"
+					},
+					"response": [
+						{
+							"name": "remove course",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/course/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"course",
+										"4"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-jGe2AI9lCAXQ0NDZa9K5Plk8wNw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 08:09:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Dans cette catégorie, nous allons pouvoir retrouver toutes les actions réalisables pour interagir avec la partie \"Cours\" de la base de données"
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "get all category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								""
+							]
+						},
+						"description": "Cet appel à l'API permet de récupérer toutes les catégories enregistrées dans la basse de donnée"
+					},
+					"response": [
+						{
+							"name": "get all category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/category/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"category",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "528"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"210-yJF4GYvJsKhwHA6Qj/QZ9qpNZYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 09:48:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"category_id\": 1,\n        \"category_name\": \"La structure HTML\",\n        \"category_desc\": \"<!DOCTYPE html>\\r\\n<html>\\r\\n<head>\\r\\n<title>Page Title</title>\\r\\n</head>\\r\\n<body>\\r\\n\\r\\n<h1>This is a Heading</h1>\\r\\n<p>This is a paragraph.</p>\\r\\n\\r\\n</body>\\r\\n</html>\"\n    },\n    {\n        \"category_id\": 3,\n        \"category_name\": \"Les bases de micropython\",\n        \"category_desc\": \"<!DOCTYPE html>\\\\r\\\\n<html>\\\\r\\\\n<head>\\\\r\\\\n<title>Page Title</title>\\\\r\\\\n</head>\\\\r\\\\n<body>\\\\r\\\\n\\\\r\\\\n<h1>This is a Heading</h1>\\\\r\\\\n<p>This is a paragraph.</p>\\\\r\\\\n\\\\r\\\\n</body>\\\\r\\\\n</html>\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "get a category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"1"
+							]
+						},
+						"description": "À l'aide de son numéro d'identification, cet appel permet à un utilisateur de récupérer les informations concernant une catégorie"
+					},
+					"response": [
+						{
+							"name": "get a category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/category/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"category",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fa-djk0EbSooj7nSBVBD3/0SwpXdw8\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 09:44:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"category_id\": 1,\n        \"category_name\": \"La structure HTML\",\n        \"category_desc\": \"<!DOCTYPE html>\\r\\n<html>\\r\\n<head>\\r\\n<title>Page Title</title>\\r\\n</head>\\r\\n<body>\\r\\n\\r\\n<h1>This is a Heading</h1>\\r\\n<p>This is a paragraph.</p>\\r\\n\\r\\n</body>\\r\\n</html>\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "add category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "categoryName",
+									"value": "Les bases de micropython",
+									"type": "text"
+								},
+								{
+									"key": "htmlContent",
+									"value": "<!DOCTYPE html>\\r\\n<html>\\r\\n<head>\\r\\n<title>Page Title</title>\\r\\n</head>\\r\\n<body>\\r\\n\\r\\n<h1>This is a Heading</h1>\\r\\n<p>This is a paragraph.</p>\\r\\n\\r\\n</body>\\r\\n</html>",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/category",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category"
+							]
+						},
+						"description": "Cet appel permet d'ajouter une catégorie à la base de données. Les champs à remplire sont :"
+					},
+					"response": [
+						{
+							"name": "add category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "categoryName",
+											"value": "Les bases de micropython",
+											"type": "text"
+										},
+										{
+											"key": "htmlContent",
+											"value": "<html><head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"shortcut icon\" href=\"../../img/favicon.ico\">\n    <title>Pour comprendre — Micropython.fr</title>\n    <link rel=\"stylesheet\" href=\"//fonts.googleapis.com/css?family=Lato:400,700\">\n    <link rel=\"stylesheet\" href=\"//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css\">\n    <link rel=\"stylesheet\" href=\"//use.fontawesome.com/releases/v5.8.1/css/all.css\">\n    <link rel=\"stylesheet\" href=\"//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css\">\n    <link rel=\"stylesheet\" href=\"../../css/theme.css\">\n    <link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css\">\n    <link rel=\"stylesheet\" href=\"../../stylesheets/extra.css\">\n    <script src=\"//code.jquery.com/jquery-2.1.1.min.js\"></script><style type=\"text/css\" id=\"operaUserStyle\"></style>\n    <script src=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js\"></script>\n    <script>\n        hljs.initHighlightingOnLoad();\n    </script> \n<style type=\"text/css\">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}\n.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}\n.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}\n.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color=\"gray\", Positive=\"true\"); /* IE */}\n</style><style type=\"text/css\">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: \"Courier New\", Courier;  font-size:24px;  color:#F0F0F0}\n.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}\n.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}\n.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}\n.CtxtMenu_MenuClose:hover:focus {  outline:none}\n</style><style type=\"text/css\">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}\n.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}\n.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}\n.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}\n.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}\n.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}\n.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }\n.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}\n.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}\n.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}\n.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}\n.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}\n.CtxtMenu_MenuSlider {  left: .1em;}\n.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}\n.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}\n.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}\n.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}\n.CtxtMenu_MenuDisabled {  color:GrayText}\n.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}\n.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}\n.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}\n.CtxtMenu_ContextMenu:focus {  outline:none}\n.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}\n.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }\n.CtxtMenu_SelectionItem {  padding-right: 1em;}\n.CtxtMenu_Selection {  right: 40%; width:50%; }\n.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}\n.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}\n.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}\n</style><style id=\"MJX-CHTML-styles\">\nmjx-container[jax=\"CHTML\"] {\n  line-height: 0;\n}\n\nmjx-container [space=\"1\"] {\n  margin-left: .111em;\n}\n\nmjx-container [space=\"2\"] {\n  margin-left: .167em;\n}\n\nmjx-container [space=\"3\"] {\n  margin-left: .222em;\n}\n\nmjx-container [space=\"4\"] {\n  margin-left: .278em;\n}\n\nmjx-container [space=\"5\"] {\n  margin-left: .333em;\n}\n\nmjx-container [rspace=\"1\"] {\n  margin-right: .111em;\n}\n\nmjx-container [rspace=\"2\"] {\n  margin-right: .167em;\n}\n\nmjx-container [rspace=\"3\"] {\n  margin-right: .222em;\n}\n\nmjx-container [rspace=\"4\"] {\n  margin-right: .278em;\n}\n\nmjx-container [rspace=\"5\"] {\n  margin-right: .333em;\n}\n\nmjx-container [size=\"s\"] {\n  font-size: 70.7%;\n}\n\nmjx-container [size=\"ss\"] {\n  font-size: 50%;\n}\n\nmjx-container [size=\"Tn\"] {\n  font-size: 60%;\n}\n\nmjx-container [size=\"sm\"] {\n  font-size: 85%;\n}\n\nmjx-container [size=\"lg\"] {\n  font-size: 120%;\n}\n\nmjx-container [size=\"Lg\"] {\n  font-size: 144%;\n}\n\nmjx-container [size=\"LG\"] {\n  font-size: 173%;\n}\n\nmjx-container [size=\"hg\"] {\n  font-size: 207%;\n}\n\nmjx-container [size=\"HG\"] {\n  font-size: 249%;\n}\n\nmjx-container [width=\"full\"] {\n  width: 100%;\n}\n\nmjx-box {\n  display: inline-block;\n}\n\nmjx-block {\n  display: block;\n}\n\nmjx-itable {\n  display: inline-table;\n}\n\nmjx-row {\n  display: table-row;\n}\n\nmjx-row > * {\n  display: table-cell;\n}\n\nmjx-mtext {\n  display: inline-block;\n}\n\nmjx-mstyle {\n  display: inline-block;\n}\n\nmjx-merror {\n  display: inline-block;\n  color: red;\n  background-color: yellow;\n}\n\nmjx-mphantom {\n  visibility: hidden;\n}\n\n_::-webkit-full-page-media, _:future, :root mjx-container {\n  will-change: opacity;\n}\n\nmjx-assistive-mml {\n  position: absolute !important;\n  top: 0px;\n  left: 0px;\n  clip: rect(1px, 1px, 1px, 1px);\n  padding: 1px 0px 0px 0px !important;\n  border: 0px !important;\n  display: block !important;\n  width: auto !important;\n  overflow: hidden !important;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\nmjx-assistive-mml[display=\"block\"] {\n  width: 100% !important;\n}\n\nmjx-c::before {\n  display: block;\n  width: 0;\n}\n\n.MJX-TEX {\n  font-family: MJXZERO, MJXTEX;\n}\n\n.TEX-B {\n  font-family: MJXZERO, MJXTEX-B;\n}\n\n.TEX-I {\n  font-family: MJXZERO, MJXTEX-I;\n}\n\n.TEX-MI {\n  font-family: MJXZERO, MJXTEX-MI;\n}\n\n.TEX-BI {\n  font-family: MJXZERO, MJXTEX-BI;\n}\n\n.TEX-S1 {\n  font-family: MJXZERO, MJXTEX-S1;\n}\n\n.TEX-S2 {\n  font-family: MJXZERO, MJXTEX-S2;\n}\n\n.TEX-S3 {\n  font-family: MJXZERO, MJXTEX-S3;\n}\n\n.TEX-S4 {\n  font-family: MJXZERO, MJXTEX-S4;\n}\n\n.TEX-A {\n  font-family: MJXZERO, MJXTEX-A;\n}\n\n.TEX-C {\n  font-family: MJXZERO, MJXTEX-C;\n}\n\n.TEX-CB {\n  font-family: MJXZERO, MJXTEX-CB;\n}\n\n.TEX-FR {\n  font-family: MJXZERO, MJXTEX-FR;\n}\n\n.TEX-FRB {\n  font-family: MJXZERO, MJXTEX-FRB;\n}\n\n.TEX-SS {\n  font-family: MJXZERO, MJXTEX-SS;\n}\n\n.TEX-SSB {\n  font-family: MJXZERO, MJXTEX-SSB;\n}\n\n.TEX-SSI {\n  font-family: MJXZERO, MJXTEX-SSI;\n}\n\n.TEX-SC {\n  font-family: MJXZERO, MJXTEX-SC;\n}\n\n.TEX-T {\n  font-family: MJXZERO, MJXTEX-T;\n}\n\n.TEX-V {\n  font-family: MJXZERO, MJXTEX-V;\n}\n\n.TEX-VB {\n  font-family: MJXZERO, MJXTEX-VB;\n}\n\nmjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {\n  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;\n}\n\n@font-face /* 0 */ {\n  font-family: MJXZERO;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff\") format(\"woff\");\n}\n\n@font-face /* 1 */ {\n  font-family: MJXTEX;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 2 */ {\n  font-family: MJXTEX-B;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff\") format(\"woff\");\n}\n\n@font-face /* 3 */ {\n  font-family: MJXTEX-I;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff\") format(\"woff\");\n}\n\n@font-face /* 4 */ {\n  font-family: MJXTEX-MI;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff\") format(\"woff\");\n}\n\n@font-face /* 5 */ {\n  font-family: MJXTEX-BI;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff\") format(\"woff\");\n}\n\n@font-face /* 6 */ {\n  font-family: MJXTEX-S1;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 7 */ {\n  font-family: MJXTEX-S2;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 8 */ {\n  font-family: MJXTEX-S3;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 9 */ {\n  font-family: MJXTEX-S4;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 10 */ {\n  font-family: MJXTEX-A;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 11 */ {\n  font-family: MJXTEX-C;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 12 */ {\n  font-family: MJXTEX-CB;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff\") format(\"woff\");\n}\n\n@font-face /* 13 */ {\n  font-family: MJXTEX-FR;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 14 */ {\n  font-family: MJXTEX-FRB;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff\") format(\"woff\");\n}\n\n@font-face /* 15 */ {\n  font-family: MJXTEX-SS;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 16 */ {\n  font-family: MJXTEX-SSB;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff\") format(\"woff\");\n}\n\n@font-face /* 17 */ {\n  font-family: MJXTEX-SSI;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff\") format(\"woff\");\n}\n\n@font-face /* 18 */ {\n  font-family: MJXTEX-SC;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 19 */ {\n  font-family: MJXTEX-T;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 20 */ {\n  font-family: MJXTEX-V;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff\") format(\"woff\");\n}\n\n@font-face /* 21 */ {\n  font-family: MJXTEX-VB;\n  src: url(\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff\") format(\"woff\");\n}\n</style></head>\n\n<body ontouchstart=\"\">\n    <div id=\"container\">\n        <aside>\n            <div class=\"home\">\n                <div class=\"title\">\n                    <button class=\"hamburger\"></button>\n                    <a href=\"../..\" class=\"site-name\"> Micropython.fr</a>\n                </div>\n                <div class=\"search\">\n                    <div role=\"search\">\n    <form id=\"rtd-search-form\" class=\"wy-form\" action=\"../../search.html\" method=\"get\">\n        <input type=\"text\" name=\"q\" placeholder=\"Search docs\" title=\"Type search term here\">\n    </form>\n</div>\n                </div>\n            </div>\n            <nav class=\"nav\">\n                <ul class=\"root\">\n                    <li class=\"toctree-l1\"><a class=\"nav-item\" href=\"../..\">Bienvenue</a></li>\n                    <li class=\"toctree-l1\"><a class=\"nav-item\" href=\"../../contact/\">Contact</a></li>\n                    <li class=\"toctree-l1\"><a class=\"nav-item\" href=\"../../forum/\">Forum Micropython francophone</a></li>\n                    <li class=\"toctree-l1\"><a class=\"nav-item\" href=\"../../news/\">News autour de Micropython</a></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">00.intro</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../00.structure_micropython/\">Structure du langage  Micropython</a></li>\n    <li class=\"toctree-l2 current\"><a class=\"nav-item current\" href=\"./\">Pour comprendre</a>\n<ul class=\"subnav\">\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#pour-comprendre-principe-general-de-lutilisation-de-micropython\">Pour comprendre : principe général de l'utilisation de micropython</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#pourquoi-micropython-est-il-interessant\">Pourquoi micropython est-il intéressant ?</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#quelques-avantages-de-lutilisation-du-python-sur-microcontroleur\">Quelques avantages de l'utilisation du Python sur microcontrôleur</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#langage-python-cpython-micropython-quelles-differences\">Langage Python, CPython, Micropython : quelles différences ?</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#cpython-le-python-pour-desktop\">CPython, le Python pour desktop</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#micropython-le-python-pour-micro-controleur\">Micropython, le Python pour micro-contrôleur</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#et-aussi-brython-le-python-pour-navigateur-web\">Et aussi... Brython, le Python pour navigateur web !</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#micropython-et-pyduino\">Micropython et pyduino</a></li>\n<li class=\"toctree-l3\"><a class=\"nav-item toc\" href=\"#liens-utiles\">Liens utiles</a></li>\n</ul></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">03.cartes micropython</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../03.cartes_micropython/00.start/\">Commencez comme vous voulez !</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../03.cartes_micropython/01.vue_ensemble/\">Vue d'ensemble</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../03.cartes_micropython/02.atouts_micropython/\">Les atouts de MicroPython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../03.cartes_micropython/03.infos_microproc/\">Infos Microprocesseur</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../03.cartes_micropython/04.ou_acheter/\">Où acheter ?</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">04.blog</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/ce_qui_rend_python_special/\">Ce qui rend Python si spécial</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/comparatif_meilleures_cartes_micropython/\">Comparatif fonctions onboard des cartes micropython (Juin 2021)</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/evolution_des_langages/\">Evolution des langages et Micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/ils_ont_dit/\">Ils ont dit...</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/langage_compile_versus_interprete/\">Langage compilé versus interprété</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/limites_inconvenients_micropython/\">Limites et inconvénients de Micropython ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/micropython_derived/\">Dérivés de Micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/micropython_rester_builtin/\">Micropython : rester \"built-in\" !</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/micropython_un_micro_os/\">Micropython : un micro-OS !</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/micropython_un_python_allege/\">Micropython, un python allégé ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/micropython_unificateur_simplificateur/\">Micropython, unificateur et simplificateur !</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/micropython_versus_circuitpython/\">Micropython versus Circuit Python</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/pure_functions/\">Ecrire des \"pure functions\"</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/quelle_carte_micropython/\">Quelle carte Micropython choisir ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/quels_avantages_cartes_micropyton/\">Quels avantages des cartes Micropython ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/simplicite_au_rendez_vous/\">(Micro)Python : la simplicité au rendez-vous !</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../04.blog/standardiser_le_materiel_associe_aux_cartes/\">Standardiser le matériel utilisé avec les cartes</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">05.outils</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../05.outils/intro/\">Intro</a></li>\n    <li class=\"toctree-l2\"><button class=\"section nav-item hide\">Ide micropython</button>\n<ul class=\"subnav hide\">\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/ide_micropython/intro/\">Les possibilités</a></li>\n    <li class=\"toctree-l3\"><button class=\"section nav-item hide\">Thonny</button>\n<ul class=\"subnav hide\">\n    <li class=\"toctree-l4\">\n<a class=\"nav-item\" href=\"../../05.outils/ide_micropython/thonny/01.installer_thonny/\">01.installer thonny</a></li>\n    <li class=\"toctree-l4\"><a class=\"nav-item\" href=\"../../05.outils/ide_micropython/thonny/02.installer_librairie/\">Thonny : Installer une librairie</a></li>\n</ul></li>\n</ul></li>\n    <li class=\"toctree-l2\"><button class=\"section nav-item hide\">Pyboard py</button>\n<ul class=\"subnav hide\">\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/pyboard_py/pyboard_py_intro/\">Pyboard.py</a></li>\n</ul></li>\n    <li class=\"toctree-l2\"><button class=\"section nav-item hide\">Terminal serie</button>\n<ul class=\"subnav hide\">\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/00.intro/\">Les terminaux série</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/ampy/\">ampy</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/minicom/\">Minicom</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/picocom/\">picocom</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/putty/\">Putty (Windows)</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/rshell/\">rshell</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../05.outils/terminal_serie/screen/\">Screen</a></li>\n</ul></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">06.technique</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/00.intro/\">Intro</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/acceder_flash/\">Accéder à la Flash de la carte</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/alim_selon_cartes_micropython/\">Alimentation selon cartes Micro-Python</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/comm_serie/\">Communication série</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/copier_code_sur_flash/\">Copier un fichier sur la flash</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/executer_code_autonome/\">Exécuter un code en autonome</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/faire_un_reset/\">Faire un reset</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/firmware_cnc/\">Firmware CNC en Micropython ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/info_techs/\">Infos techs</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/memoires_carte_micropython/\">Les mémoires d'une carte Micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/principes_generaux_repl_script/\">Principes généraux REPL / script</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/sequence_de_boot/\">Séquence de boot</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/sources_tutos/\">Sources de tutos Micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/timer_duree_execution/\">Timer le durée d'exécution</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/trucs_et_astuces/\">Trucs et astuces</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/uploader_code_depuis_carte/\">\"Uploader\" un code depuis la carte</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../06.technique/wrapping_micropython_c/\">Wrapping C ?</a></li>\n    <li class=\"toctree-l2\"><button class=\"section nav-item hide\">Mode interpreteur</button>\n<ul class=\"subnav hide\">\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../06.technique/mode_interpreteur/kernel_pour_jupyter/\">Micro Python avec Jupyter</a></li>\n    <li class=\"toctree-l3\"><a class=\"nav-item\" href=\"../../06.technique/mode_interpreteur/web_repl/\">Web REPL</a></li>\n</ul></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">07.realisations</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../07.realisations/\">Intro</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">09.shields</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../09.shields/intro/\">Shields</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">10.for kids</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../10.for_kids/intro/\">Bienvenue !</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">12.la minute micropython</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../12.la_minute_micropython/000.intro/\">Intro</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../12.la_minute_micropython/001.support_communaute_python/\">Support de la communauté Python</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">88.lab</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/00.intro/\">Le Lab : intro</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/afficher_digit_sur_oled/\">Afficher des digits sur un écran OLED ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/ajouter_fonction_classe/\">Ajouter une fonction à une classe existante</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/analyse_usage_ram/\">Analyse de l'usage de la RAM pour différentes opération</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/bluetooth_micropython/\">Utiliser le Bluetooth avec micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/bridge_serial_http/\">Bridge Serial (repl) / Http</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/connaitre_la_taille_disponible_en_flash/\">Espace disponible en Flash ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/connaitre_ram_libre/\">Connaître la taille en RAM libre</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/creation_micro_webui/\">Création de micro webUI</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/dmx/\">DMX avec micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/ecrans_tft_oled_ips/\">Ecrans TFT, IPS, OLED, LCD</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/envoyer_notification_android_depuis_micropython/\">Envoyer notifications android depuis Micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/geometrie_euclidienne/\">Géométrie euclidienne en Micropython ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/images_en_micropython/\">Images en micopython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/installation_lib_simple/\">Installation de librairie simple ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/interagir_avec_micropython_depuis_python/\">Interagir avec Micropython depuis CPython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/lancer_automatiquement_ide/\">Lancer automatiquement IDE ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/micropython_sur_le_raspberry_pi/\">Micropython sur le Rasbperry Pi ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/minifier_lib_js/\">Minifier lib js</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/multithread_micropython%20/\">Les threads en micropython</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/numpy_en_micropython/\">Numpy sous  micropython !</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/numpy_like_en_builtin/\">\"Numpy-like\" en \"Built-in\"</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/optimiser_usage_ram/\">Optimiser l'usage de la RAM</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/ouvrir_fichier_par_tranches/\">Ouvrir un fichier par tranches ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/plotting_2d/\">Plotting 2d sur OLED</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/recuperer_sortie_print/\">Récupérer la sortie de print ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/regul_pid_micropython/\">Régulation PID en micropython ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/svg_to_oled/\">SVG to OLED ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/traitement_image/\">Traitement d'image ?</a></li>\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../88.lab/utiliser_libs_js_legeres/\">Utiliser des librairies Javascript légères</a></li>\n</ul></li>\n                    <li class=\"toctree-l1\"><button class=\"section nav-item\">99.mentions legales</button>\n<ul class=\"subnav\">\n    <li class=\"toctree-l2\"><a class=\"nav-item\" href=\"../../99.mentions_legales/mentions_legales/\">Mentions légales</a></li>\n</ul></li>\n                </ul>\n            </nav>\n            <div class=\"repo\">\n    <div class=\"previous\"><a href=\"../00.structure_micropython/\">« Previous</a></div>\n    <div class=\"next\"><a href=\"../../03.cartes_micropython/00.start/\">Next »</a></div>\n</div>\n        </aside>\n        <div id=\"spacer\"><button class=\"arrow\"></button></div>\n        <main>\n            <div class=\"home-top\">\n                <button class=\"hamburger\"></button>\n                <a href=\"../..\" class=\"site-name\"> Micropython.fr</a>\n            </div>\n            <div id=\"main\">\n                <nav class=\"breadcrumbs\">\n<ul>\n    <li>00.intro</li>\n</ul>\n</nav>\n                <div id=\"content\"><h1 id=\"pour-comprendre\">Pour comprendre</h1>\n<h2 id=\"pour-comprendre-principe-general-de-lutilisation-de-micropython\">Pour comprendre : principe général de l'utilisation de micropython</h2>\n<p>Le principe général est le suivant : </p>\n<ul>\n<li>on connecte la carte avec Micropython sur le port USB : un port série lui est attribué : /dev/ttyACM0 par exemple sous Gnu/Linux</li>\n<li>la carte va alors apparaître sur le système comme un disque : on voit les fichiers présents dans la flash</li>\n<li>on va alors pouvoir : <ul>\n<li>soit lancer le mode interpréteur et interagir directement avec la carte : TOP pour tester ! </li>\n<li>soit écrire des codes (directement sur la flash ou même sur le pc) et les exécuter dans la foulée qui seront stockés soit en RAM, soit sur carte SD</li>\n<li>soit pouvoir faire exécuter les codes au démarrage</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"pourquoi-micropython-est-il-interessant\">Pourquoi micropython est-il intéressant ?</h2>\n<h3 id=\"python-un-langage-de-haut-niveau-porte-sur-microcontroleur\">Python : un langage de haut niveau porté sur microcontrôleur</h3>\n<p>Le langage Python est un langage dit de \"haut niveau\" et dispose de plusieurs outils de codage particulièrement puissant pour coder rapidement des choses qui seraient plus compliquées à faire dans d'autres langage. Donc, en soi, le langage Python est très séduisant et personnellement, je l'utilise depuis plusieurs années déjà pour mes codages desktop et mini-pc. Micropython porte le langage python sur microcontrôleur : il est donc possible de coder en Python le microcontrôleur et de bénéficier de toute la puissance de ce langage sur une simple petite carte électronique. </p>\n<h3 id=\"un-microcontroleur-plus-puissant\">Un microcontrôleur plus puissant</h3>\n<p>Ce faisant, passer à micropython, c'est également bénéficier d'un microcontrôleur plus puissant qu'avec Arduino : on dispose ici de 32bits@168Mhz (Pyboard) contre 8bits@16Mhz(Arduino UNO, Mega). De nombreuses fonctionnalités non-disponibles sur les cartes Arduino sont par ailleurs ici disponibles (conversion numérique-analogique (permettant de faire un générateur de fonction par exemple), compteurs pour encodeurs rotatifs, carte SD intégrée, RTC intégré, etc. )  Le prix et la mise en oeuvre sont par ailleurs en tout point comparables. </p>\n<h3 id=\"un-apprentissage-multi-plateformes-et-multi-usage\">Un apprentissage \"multi-plateformes\" et \"multi-usage\"</h3>\n<p>En utilisant Micropython sur un microcontrôleur, on apprend un langage très polyvalent : le même langage permettra de coder également sur mini-pc (Raspberry Pi and co) ou sur poste fixe (aussi bien sous Gnu/Linux que Mac ou Windows). Python est un langage qui dispose de très nombreuses librairies permettant d'être \"multi-usage\" : interfaces graphiques, réseau, données, traitement d'image, sons, librairies mathématiques, astronomiques, protocoles divers (XML, HTML, NMEA, etc.), manipulation de fichier 3D ou 2D, etc. A peu près tout est possible en Python !</p>\n<p>A l'inverse, si on connaît déjà Python, on retrouve tout ce qu'on aime côté micro-contrôleur. </p>\n<h3 id=\"micropython-est-multi-materiel\">Micropython est multi-matériel</h3>\n<p>Micropython est un langage interprété qui va pouvoir être installé sur de très nombreuses cartes différentes, ce qui offre un niveau d'abstraction vis à vis du matériel qui est intéressant. Cela évite d'être enfermé dans une gamme trop contrainte de matériel ou de type de processeur. Le nombre de \"ports\", autrement dit le nombre d'architecture de microcontrôleur qui sont supportées par MicroPython sont déjà nombreuses, de l'ordre de la 20 aine. Et cela n'est à priori pas terminé... </p>\n<div class=\"admonition note\">\n<p class=\"admonition-title\">Le Raspberry Pi Pico : un change gamer !</p>\n<p>Au début 2021, l'arrivée du Raspberry Pi Pico a tout d'un \"change gamer\", apportant simultanément plusieurs disruptions (le prix, le caractère \"conçu en interne\" du microcontrôleur, etc.) qui vont probablement venir donner à Micropython son caractère de langage standard sur les plateformes à micro-contrôleur, au moins dans le cadre d'une approche didactique ou de type \"maker\". </p>\n</div>\n<h3 id=\"iot-ready-iotinternet-of-things-linternet-des-objets\">\"IoT ready\" (IoT=\"Internet Of Things\" = l'internet des objets)</h3>\n<p>Micropython est d'ors et déjà disponibles sur plusieurs cartes qui permettent la communication sans fil selon plusieurs protocoles : Wifi, bluetooth, sigfox, etc. Micropython permet donc de bénéficier de la puissance de Python pour mettre en oeuvre simplement des applications connectées embarquées ou même des serveurs embarqués.</p>\n<h3 id=\"pas-un-veritable-os-mais-une-sorte-de-micro-os\">Pas un véritable OS mais une sorte de \"micro-OS\"</h3>\n<p>Clairement, une carte Micropython n'est pas un OS, un système d'exploitation, tel qu'un système Linux que l'on peut installer sur un Raspberry Pi. Mais ce qui est extrêmement intéressant et aussi très agréable à utiliser, c'est que Micropython fourni en natif des librairies de \"gestion système\" telles qu'on les trouve sur un vrai système d'exploitation, notamment la gestion des répertoires, des fichiers, des volumes mêmes (mémoire flash ou carte SD), du temps voire de l'heure temps réel (RTC), etc. et en ce sens Micropython joue le rôle d'un réel \"micro-OS\" qui le distingue très clairement d'une solution de programmation en C tel qu'Arduino. Le caractère \"interprété\" du langage Python vient renforcer cette sensation de gestion en \"ligne de commande\" qui est le propre d'un système d'exploitation.  </p>\n<p>Selon moi, <strong>Micropython joue clairement au final le rôle d'un micro-OS pour micro-contrôleur, qui plus est en mode temps réel</strong> car il permet de gérer les GPIO, etc. de façon totalement directe et transparente. </p>\n<div class=\"admonition note\">\n<p class=\"admonition-title\">Micropython apporte juste ce qu'il faut de complexité !</p>\n<p>Et à contrario, le niveau \"micro-OS\" obtenu avec Micropython a l'avantage de ne pas apporter une complexité inutile pour de petits projets, à l'inverse du Raspberry Pi qui nécessite un système complet pour parfois simplement accéder au GPIO, avec tous les problèmes de sécurité d'un système Gnu/Linux complet que cela entraîne. On pourrait dire que Micropython apporte une sorte de juste équilibre entre des fonctionnalités \"système\" fournies en natif ce qui simplifie grandement les choses comparativement à du code C compilé tel qu'Arduino et un système Gnu/Linux complet qui apporte une complexité inutile tout en faisant perdre en réactivité pour les opérations de bas niveau. </p>\n</div>\n<h2 id=\"quelques-avantages-de-lutilisation-du-python-sur-microcontroleur\">Quelques avantages de l'utilisation du Python sur microcontrôleur</h2>\n<h3 id=\"test-de-code-python-possible-sur-desktop\">Test de code python possible sur desktop</h3>\n<p>Imaginez que vous soyez en train de développer un calcul de trajectoire ou que vous vouliez tester un bout de code Python un peu complexe ou \"tordu\" : le fait de coder en Python permet de réaliser le test sur son desktop dans l'interpréteur classique, tel que le notebook Jupyter, de faire quelques essais de validation, de vérifier le résultat obtenu et même d'afficher des graphiques de validation le cas échéant. Une fois le code validé, un simple copier/coller permet de l'utiliser sur le microcontrôleur avec micropython. </p>\n<h3 id=\"doc-et-assistance-python-tres-fournie\">Doc et assistance Python très fournie</h3>\n<p>Python est un langage très utilisé et qui dispose d'une très grosse communauté d'utilisateurs, d'une section très active sur <a href=\"https://stackoverflow.com/questions/tagged/python\">Stackoverflow</a> (site sépcialisé de codeurs avec plus de 50 millions de membres, des réponses classées par niveau de pertinence, etc.)... et par conséquent, on trouve <strong>très vite et très rapidement</strong> les solutions aux divers problèmes de codage \"pur Python\" rencontrés. Micropython, c'est avant tout du Python, et donc tous les \"trucs et astuces\" du langage Python (et ils sont nombreux) sont valables pour utilisation sur le microcontrôleur ! </p>\n<h3 id=\"les-ressources-dapprentissage-du-python-sont-tres-tres-nombreuses\">Les ressources d'apprentissage du Python sont très (très) nombreuses</h3>\n<p>Les outils d'apprentissage du Python sont très nombreux et on met le pied dans un environnement de ressources disponibles très riche de ce point de vue. </p>\n<h3 id=\"python-est-un-langage-de-niveau-professionnel\">Python est un langage de niveau professionnel</h3>\n<p>En apprenant Python, on n'apprend pas un langage \"pour faire mumuse\"... C'est un langage très puissant, très polyvalent, de niveau professionnel et sur lequel de nombreuses applications de qualité sont basées. C'est un langage moderne qui simplifie la syntaxe tout en rendant le code plus efficace. Bref, un investissement \"rentable\", notamment pour de jeunes codeurs qui auront ainsi les bases pour aller très très loin avec ce langage à peu près sans limites. </p>\n<h2 id=\"langage-python-cpython-micropython-quelles-differences\">Langage Python, CPython, Micropython : quelles différences ?</h2>\n<h3 id=\"le-langage-python\">Le Langage Python</h3>\n<p>En soi, le langage Python est un langage de programmation de haut niveau, interprété. Pour pouvoir être utilisé le langage Python nécessite un \"moteur logiciel\" ou \"moteur Python\" comme on veut, qui va être capable de comprendre et exécuter les instructions Python.</p>\n<p>En soi, donc, le langage Python n'est pas attaché à une plateforme donnée. </p>\n<p>Concrètement, un \"moteur\" de langage Python est à la base du code C qui est compilé pour une plateforme donnée. Et il existe plusieurs implémentations de ce langage : CPython, Micropython et même Brython.</p>\n<h2 id=\"cpython-le-python-pour-desktop\">CPython, le Python pour desktop</h2>\n<p>L'implémentation la plus usuelle et la plus habituelle est l'implémentation de Python pour micro-processeur qui tourne sur un système d'exploitation qui s'appelle CPython (mais que l'on nomme le plus souvent Python tout simplement). </p>\n<p>Cette implémentation de Python, celle que l'on utilise par défaut lorsque l'on programme en Python, comprend : </p>\n<ul>\n<li>des fonctions et instructions dîtes \"built-in\" : c'est le coeur du langage</li>\n<li>des librairies rassemblant des fonctions supplémentaires dédiées, organisées par thématiques, pour gérer les fichiers, le temps, etc. Il existe de très nombreuses librairies qui sont considérées comme partie intégrantes du langage Python et que l'on appelle \"librairies standards\"</li>\n<li>des librairies supplémentaires écrites en Python ou compilées à partir du C et qui fournissent un très large éventail de possibilités : réseau, web, graphiques, maths, science, interface graphique, machine Learning, etc. Certaines de ces librairies  sont tellement utilisées qu'elles sont considérées quasiment comme des \"standards\". Ainsi de numpy, matplotlib, etc. Le nombre de librairies disponibles est très important, de l'ordre de plusieurs  milliers.  </li>\n</ul>\n<p>Un desktop ayant des ressources matérielles importantes (mémoire RAM, espace disque, puissance de calcul,...) le CPython n'est à peu près pas limité dans ses possibilités d'implémentation dans ce contexte. </p>\n<h2 id=\"micropython-le-python-pour-micro-controleur\">Micropython, le Python pour micro-contrôleur</h2>\n<p>Micropython est une implémentation du langage Python dédiée pour micro-contrôleur, autrement dit pour des plateformes \"très petites\" en terme de ressources matérielles (RAM, capacité de calcul). Nécessairement, Micropython n'implémente pas l'intégralité des possibilités du CPython, mais il permet de retrouver sur microcontrôleur l'essentiel, le coeur de ce qui fait le langage Python, et même un peu plus. </p>\n<p>Ainsi à ce jour, Micropython implémente : </p>\n<ul>\n<li>les fonctions \"built-in\" : le coeur du langage</li>\n<li>quelques librairies standards essentielles, notamment celles pour gérer les fichiers, le temps, etc. Ce qui d'ailleurs confère à mon sens à MicroPython un statut de \"micro-OS\" permettant d'interagir avec la plateforme sur laquelle il est implémenté de façon interactive, en \"ligne de commande\" via l'interpréteur Python. C'est beaucoup moins qu'un vrai OS, mais c'est beaucoup plus qu'un simple micro-contrôleur. </li>\n<li>des librairies \"hardware\" dédiées pour le cas de l'utilisation d'un micro-contrôleur, à savoir la gestion des communications SPI, UART, I2C, 1-wire, DHT, l'utilisation de certains matériels usuels tels que afficheurs LCD, etc. </li>\n<li>et on commence à voir des implémentations de quelques librairies \"essentielles\", telle que Numpy par exemple qui a un portage allégé pour Micropython... Encore expérimental, mais très prometteur. </li>\n</ul>\n<div class=\"admonition note\">\n<p class=\"admonition-title\">Note</p>\n<p>Pour distinguer les librairies CPython des librairies Micropython, le nom des librairies est précédé d'un <code>u</code> dans le cas de Micropython. Ainsi, la librairie CPython <code>os</code> s'appelle <code>uos</code> en Micropython, la librairie CPython <code>io</code> s'appelle <code>uio</code> en Micropython, etc. On trouvera la listes de librairies / modules implémentés en Micropython <a href=\"http://docs.micropython.org/en/latest/library/index.html#python-standard-libraries-and-micro-libraries\">ici</a> </p>\n<p><strong>Franchement, c'est vraiment pas mal, l'essentiel y est et est très suffisant dans un contexte d'usage sur microcontôleur. </strong> </p>\n</div>\n<h2 id=\"et-aussi-brython-le-python-pour-navigateur-web\">Et aussi... Brython, le Python pour navigateur web !</h2>\n<p>Dans la même logique de diffusion de Python \"à tous les étages\"... il existe un portage de Python pour navigateur Web, j'ai nommé Brython ! Brython est le diminutif de \"Browser-Python\". </p>\n<p>Il n'y a pas de lien direct avec Micropython en soi, mais il s'agit de la même logique d'implémentation du langage Python dans un contexte différent du contexte \"desktop\" ou \"système\". Techniquement, Brython est une implémentation de Python basée sur Javascript qui est le seul langage de programmation possible dans le navigateur à ce jour (mais çà pourrait bien changer à terme...). </p>\n<p>De la même façon, Brython va implémenter : </p>\n<ul>\n<li>les fonctions \"built-in\" : le coeur du langage</li>\n<li>quelques librairies standards, celles qui font sens dans le contexte d'une utilisation web \"client side\"</li>\n<li>des librairies dédiées propres au contexte d'une utilisation web \"client side\", tel que websocket, ajax, etc. </li>\n<li>et cerise sur le gâteau, Brython supporte l'intégration/utilisation simplifiée de librairies Javascript existantes dans le code Brython lui-même (en permettant d'exposer les objets Javascripts dans le code Python). </li>\n</ul>\n<p>C'est un autre domaine que je développe par ailleurs, mais je le cite ici pour bien faire comprendre et saisir le principe des implémentations multiples du langage Python. </p>\n<p>Pour plus d'informations sur Brython, voir <a href=\"https://brython.info/\">ici</a>. </p>\n<h2 id=\"micropython-et-pyduino\">Micropython et pyduino</h2>\n<p>Micropython est un portage du langage Python sur microcontrôleur et à ce titre, en plus du langage Python lui-même, micropython expose les éléments hardware (broches GPIO, mesures analogiques, PWM, timer, etc.) via des fonctions micropython dédiées. L'ensemble des fonctions fournies est très complet et pourra le cas échéant sembler \"complexe\" comparativement à une utilisation de type \"arduino\". </p>\n<p>C'est pourquoi j'ai porté la librairie Pyduino que j'avais écrite en 2013 (portage des instructions Arduino en Python sur mini-pc) en micropython. Cette version de Pyduino s'appelle upyduino (toutes les libs pour micropython sont préfixées d'un <strong>u</strong>) et s'utilise ici par simple copier/coller d'un fichier dans la flash de la carte utilisée : une fois fait il suffit de l'importer dans son code pour exposer les fonctions \"Arduino like\" dans le code Python. </p>\n<p>Il est donc possible, de cette façon, d'écrire des codes Python utilisant des fonctions \"à la arduino\" sur les cartes micropython. Cela permet de garder les \"réflexes\" déjà acquis avec Arduino et de transposer plutôt facilement des codes d'une plateforme vers l'autre.  </p>\n<blockquote>\n<blockquote>\n<blockquote>\n<p>Ce faisant, upyduino n'est qu'une simple ré-écriture des fonctions Arduino avec les instructions micropython : ainsi upyduino n'est qu'un code micropython et par conséquent, micropython reste directement et totalement accessible depuis un code qui utilise upyduino. De plus, upyduino ne fait que 10-15ko et donc n'impute quasiment pas les ressources disponibles sur la carte micropython. Enfin, upyduino ne concerne que les fonctions \"dédiées microcontrôleur\" et n'impacte et ne modifie en rien le langage Python lui-même. En clair, <strong>\"on a le beurre et l'argent du beurre\"</strong> ! </p>\n</blockquote>\n</blockquote>\n</blockquote>\n<p>Sur ce site, vous trouverez une section Micropython qui exposera les fonctions natives micropython et une section upyduino qui exposera l'utilisation de upyduino. </p>\n<div class=\"admonition note\">\n<p class=\"admonition-title\">Note</p>\n<p>En pratique, je vous conseille de débuter avec upyduino pour ensuite approfondir au besoin les fonctions natives micropython.</p>\n</div>\n<h3 id=\"pourquoi-pyduino\">Pourquoi Pyduino ?</h3>\n<p>Pourquoi vouloir conserver les fonctions \"Arduino-like\" (=Pyduino) en Python ? Les fonctions du langage micropython ne suffisent-elles pas ? </p>\n<p>Soyons clair, tout ce que fait Pyduino repose sur micropython, donc micropython sait le faire. </p>\n<p>Par contre : </p>\n<ul>\n<li>\n<p>les instructions Arduino-like ne concernent que la partie \"micro-contrôleur\" (accès GPIO, fonctions hardware, etc.) et préservent complètement par ailleurs les atouts du langage Python, véritable plus-value de micropython. Mais Arduino a apporté une couche d'abstraction vis à vis du matériel qui a fait tout son succès et il est très tentant de garder cette abstraction. Ainsi, les broches au lieu de s'appeler X1, Y17 ou G21 sont simplement numérotées de 0 à xx selon la carte : simple ! </p>\n</li>\n<li>\n<p>les instructions Arduino-like sont simples et c'est ce que l'on souhaite en pratique. Ainsi, lire une broche analogique se résume à analogRead(broche) là où en micropython il faut caster une broche en ADC avant de réaliser une mesure. De la même façon, la génération d'une onde PWM se fait avec simplement analogWrite() là où en micropython il faut configurer un timer, un channel, une fréquence, et associer le tout à une broche. </p>\n</li>\n<li>\n<p>si on vient de l'Arduino, on a pris des réflexes de codage que l'on peut transposer facilement : on est vite opérationnel. De plus, les utilisateurs Arduino sont très nombreux et une nouvelle plateforme ne peut pas faire l'impasse sur cette communauté. Les codes existants sont par ailleurs nombreux et donc source d'inspiration assez simples à transposer en Pyduino. </p>\n</li>\n<li>\n<p>les cartes et autres shields Arduino sont nombreux, permettant simplement d'utiliser des capteurs, moteurs, etc... et le plus court chemin vers l'utilisation de ce matériel existant est la transposition similaire des noms de fonctions, de broches, etc. </p>\n</li>\n</ul>\n<div class=\"admonition note\">\n<p class=\"admonition-title\">Note</p>\n<p>Pour dire les choses simplement, avec Pyduino, on a le meilleur des 2 mondes : la puissance du langage Python, la simplicité de l'Arduino pour la partie microcontrôleur. </p>\n</div>\n<h3 id=\"a-vous-de-jouer\">A vous de jouer</h3>\n<p>S'installer pour utiliser micropython, c'est très simple : vous avez besoin d'une carte tournant sous micropython, d'un poste fixe, d'un éditeur de texte à coloration syntaxique. </p>\n<p>Le plus simple, c'est d'utiliser une carte Pi Pico <a href=\"https://www.micropython.fr/port_pi_pico/\">Prêt ? C'est parti... </a></p>\n<h2 id=\"liens-utiles\">Liens utiles</h2>\n<ul>\n<li>Le site officiel : <a href=\"https://micropython.org/\">https://micropython.org/</a></li>\n<li>Le github : <a href=\"https://github.com/micropython/micropython\">https://github.com/micropython/micropython</a></li>\n<li>La doc : <a href=\"http://docs.micropython.org/en/latest/pyboard/\">http://docs.micropython.org/en/latest/pyboard/</a></li>\n</ul></div>\n                <footer>\n    <div class=\"footer-buttons\">\n        <div class=\"previous\"><a href=\"../00.structure_micropython/\" title=\"Structure du langage Micropython\"><span>Previous</span></a></div>\n        <div class=\"next\"><a href=\"../../03.cartes_micropython/00.start/\" title=\"Commencez comme vous voulez !\"><span>Next</span></a></div>\n    </div>\n    <div class=\"footer-note\">\n        <p>\n            Built with <a href=\"http://www.mkdocs.org\">MkDocs</a> using\n            <a href=\"https://github.com/daizutabi/mkdocs-ivory\">Ivory theme</a>.\n        </p>\n    </div>\n</footer>\n            </div>\n        </main>\n    </div>\n    <script>var base_url = '../..';</script>\n    <script src=\"../../js/theme.js\"></script>\n    <script src=\"../../javascripts/extra.js\"></script>\n    <script src=\"https://polyfill.io/v3/polyfill.min.js?features=es6\"></script>\n    <script src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"></script>\n    <script src=\"../../search/main.js\"></script>\n\n\n</body></html>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/category",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "127"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-mx88uJtawi5mOfJRvFKtxbWw5hM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 09:46:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"fieldCount\": 0,\n    \"affectedRows\": 1,\n    \"insertId\": 2,\n    \"serverStatus\": 2,\n    \"warningCount\": 0,\n    \"message\": \"\",\n    \"protocol41\": true,\n    \"changedRows\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "remove category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/category/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"2"
+							]
+						},
+						"description": "Cet appel permet de supprimer une catégorie de la base de données"
+					},
+					"response": [
+						{
+							"name": "remove category",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/category/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"category",
+										"2"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7f-r8bKvcfQJxHfmO4yrVRF/uUE37I\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Nov 2023 09:48:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			],
+			"description": "Dans cette catégorie, nous allons pouvoir retrouver toutes les actions réalisables pour interagir avec la partie \"category\" de la base de données"
+		}
+	]
+}
